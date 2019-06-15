@@ -1,0 +1,83 @@
+<%- include('./partials/header.ejs'); %>
+        
+<div class="container">
+<div>
+                <h1>New Enthusiast Registartion</h1>
+        </div>
+
+        <form action="/newUser" method="POST">
+                Name<input type="text" name="fullName"> <br>
+                Username<input type="text" name="username"> <br>
+                Email<input type="text" name="email_ID"> <br>
+
+                <span>Day Routine</span> <br>
+                <span>Select your Face Wash</span>
+                <select>
+                        <%      for (let i = 0; i < faceWash.length; i++) { %>
+                        <option value="faceWash"><%=   faceWash[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Toner</span>
+                <select>
+                        <%      for (let i = 0; i < toner.length; i++) { %>
+                        <option value="toner"><%=   toner[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Toner</span>
+                <select>
+                        <%      for (let i = 0; i < serum.length; i++) { %>
+                        <option value="serum"><%=   serum[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Moisturizer</span>
+                <select>
+                        <%      for (let i = 0; i < moisturizer.length; i++) { %>
+                        <option value="moisturizer"><%=   moisturizer[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your SPF</span>
+                <select>
+                        <%      for (let i = 0; i < spf.length; i++) { %>
+                        <option value="spf"><%=   spf[i] %></option>
+                        <%  } %>
+                </select><br>
+                <span>Night Routine</span> <br>
+                <span>Select your Face Wash</span>
+                <select>
+                        <%      for (let i = 0; i < faceWash.length; i++) { %>
+                        <option value="faceWash"><%=   faceWash[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Toner</span>
+                <select>
+                        <%      for (let i = 0; i < toner.length; i++) { %>
+                        <option value="toner"><%=   toner[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Toner</span>
+                <select>
+                        <%      for (let i = 0; i < serum.length; i++) { %>
+                        <option value="serum"><%=   serum[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Moisturizer</span>
+                <select>
+                        <%      for (let i = 0; i < moisturizer.length; i++) { %>
+                        <option value="moisturizer"><%=   moisturizer[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <button type="submit">Submit</button>
+ 
+        </form>
+
+</div>
+
+        <%- include('./partials/footer.ejs'); %>
