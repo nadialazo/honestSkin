@@ -5,72 +5,72 @@
                 <h1>New Enthusiast Registartion</h1>
         </div>
 
-        <form action="/newUser" method="POST">
+        <form action="/newMember" method="POST">
                 Name<input type="text" name="fullName"> <br>
                 Username<input type="text" name="username"> <br>
                 Email<input type="text" name="email_ID"> <br>
 
                 <span>Day Routine</span> <br>
                 <span>Select your Face Wash</span>
-                <select>
+                <select name="faceWash">
                         <%      for (let i = 0; i < faceWash.length; i++) { %>
-                        <option value="faceWash"><%=   faceWash[i] %></option>
+                        <option value=<%=  faceWash[i] %>><%=   faceWash[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Toner</span>
-                <select>
+                <select name="toner">
                         <%      for (let i = 0; i < toner.length; i++) { %>
-                        <option value="toner"><%=   toner[i] %></option>
+                        <option value=<%= toner[i] %>><%=   toner[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Toner</span>
-                <select>
+                <select name="serum">
                         <%      for (let i = 0; i < serum.length; i++) { %>
-                        <option value="serum"><%=   serum[i] %></option>
+                        <option value=<%=  serum[i] %>><%=   serum[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Moisturizer</span>
-                <select>
+                <select name="moisturizer">
                         <%      for (let i = 0; i < moisturizer.length; i++) { %>
-                        <option value="moisturizer"><%=   moisturizer[i] %></option>
+                        <option value=<%=  moisturizer[i] %></option>><%=   moisturizer[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your SPF</span>
-                <select>
+                <select name="spf">
                         <%      for (let i = 0; i < spf.length; i++) { %>
-                        <option value="spf"><%=   spf[i] %></option>
+                        <option value=<%= spf[i] %>><%=   spf[i] %></option>
                         <%  } %>
                 </select><br>
                 <span>Night Routine</span> <br>
                 <span>Select your Face Wash</span>
-                <select>
+                <select name="faceWashNight">
                         <%      for (let i = 0; i < faceWash.length; i++) { %>
-                        <option value="faceWash"><%=   faceWash[i] %></option>
+                        <option value=<%= faceWash[i] %>><%=   faceWash[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Toner</span>
-                <select>
+                <select name="tonerNight">
                         <%      for (let i = 0; i < toner.length; i++) { %>
-                        <option value="toner"><%=   toner[i] %></option>
+                        <option value=<%= toner[i] %>><%=   toner[i] %></option>
                         <%  } %>
                 </select><br>
 
-                <span>Select your Toner</span>
-                <select>
+                <span>Select your Serum</span>
+                <select name="serumNight">
                         <%      for (let i = 0; i < serum.length; i++) { %>
-                        <option value="serum"><%=   serum[i] %></option>
+                        <option value=<%=  serum[i] %>><%=   serum[i] %></option>
                         <%  } %>
                 </select><br>
 
-                <span>Select your Moisturizer</span>
-                <select>
+                <span>Select your zz Moisturizer</span>
+                <select name="moisturizerNight">
                         <%      for (let i = 0; i < moisturizer.length; i++) { %>
-                        <option value="moisturizer"><%=   moisturizer[i] %></option>
+                        <option value=<%=  moisturizer[i] %>><%=   moisturizer[i] %></option>
                         <%  } %>
                 </select><br>
 

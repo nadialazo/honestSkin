@@ -2,16 +2,38 @@
 
 <div class="container">
 
-<div>
+        <div>
                 <h1>Day Routines</h1>
-</div>
+        </div>
 
-<p>
-        See what other users's routine to maintain a healthy complexion. Share with our community what works for you.
-</p>
+        <p>
+                See what other users's routine to maintain a healthy complexion. Share with our community what works for
+                you.
+        </p>
+        <div>
+                 <div>     
+                        <% for(let i=0; i<users.length; i++) { %>
+                        <%= user[i].userName %>
+                                       
+                <table>
+                        <tr>
+                                <th>Face Wash</th>
+                                <th>Toner</th>
+                                <th>Serum</th>
+                                <th>Moisturizer</th>
+                                <th>SPF</th>
+                        </tr>
 
+                        <td><%= users[i].faceWash %></td>
+                        <td><%= users[i].toner %></td>
+                        <td><%= users[i].serum %></td>
+                        <td><%= users[i].moisturizer %></td>
+                        <td><%= users[i].spf %></td>
+                </table>
+                <% } %>
+                        </div>
+        </div>
 </div>
 
 
 <%- include('./partials/footer.ejs'); %>
-
