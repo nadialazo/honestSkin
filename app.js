@@ -3,7 +3,7 @@ const app = express();
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const connectionUrl = "mongodb+srv://nad123:nad123@cluster0-khwxy.mongodb.net/test?retryWrites=true&w=majority";
+const connectionUrl = "mongodb+srv://xxx:xxxxxxxxxxxxxxx";
 mongoose.connect(connectionUrl, {useNewUrlParser: true})
 .then(() => console.log('MongoDB Connected'))
 .catch((err) => console.log(err));
@@ -104,17 +104,20 @@ app.post('/newMember', function(req, res){
 
 app.get('/day_routine', (req, res) => { 
         //   Get all companies from the database
-        user.find({
+        console.log({
                 username: username,
                 faceWash: faceWash,
                 toner: toner,
                 serum: serum,
                 moisturizer: moisturizer,
                 spf: spf,
+        })
+        user.find({
         }, (err, allUsers) => {
           if(err){
             console.log('THERE WAS AN ERROR: ' + err);
           } else {
+            console.log(allUsers)
             res.render('day', {users: allUsers});
           }
         });
