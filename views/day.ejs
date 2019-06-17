@@ -12,18 +12,19 @@
         </p>
         <div>
                  <div>     
-                        <% for(let i=0; i < users.length; i++){ %>
-                        <%= users[i].userName %>
                                        
                 <table>
                         <tr>
+                                <th>User</th>
                                 <th>Face Wash</th>
                                 <th>Toner</th>
                                 <th>Serum</th>
                                 <th>Moisturizer</th>
                                 <th>SPF</th>
                         </tr>
+                        <% for(let i=0; i < users.length; i++){ %>
 
+                        <td><%= users[i].username %></td>
                         <td><%= users[i].faceWash %></td>
                         <td><%= users[i].toner %></td>
                         <td><%= users[i].serum %></td>

@@ -2,79 +2,84 @@
         
 <div class="container">
 <div>
-                <h1>New Enthusiast Registartion</h1>
+                <h1>New Member Registration</h1>
         </div>
 
-        <form action="/newMember" method="POST">
-                Name<input type="text" name="fullName"> <br>
-                Username<input type="text" name="username"> <br>
-                Email<input type="text" name="email_ID"> <br>
+        <form action="/newMember" method="POST" class="form-group">
+                <label>Name</label>
+                <input type="text" name="fullName" class="form-control" aria-describedby="emailHelp"> <br>
 
-                <span>Day Routine</span> <br>
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" aria-describedby="emailHelp"> <br>
+
+                <label>Email</label>
+                <input type="text" name="email_ID" class="form-control" aria-describedby="emailHelp"> <br>
+
+                <p class="text-secondary">Day Routine</p> <br>
                 <span>Select your Face Wash</span>
-                <select name="faceWash">
+                <select name="faceWash" class="form-control">
                         <%      for (let i = 0; i < faceWash.length; i++) { %>
                         <option value=<%=  faceWash[i] %>><%=   faceWash[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Toner</span>
-                <select name="toner">
+                <select name="toner" class="form-control">
                         <%      for (let i = 0; i < toner.length; i++) { %>
                         <option value=<%= toner[i] %>><%=   toner[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Toner</span>
-                <select name="serum">
+                <select name="serum" class="form-control">
                         <%      for (let i = 0; i < serum.length; i++) { %>
                         <option value=<%=  serum[i] %>><%=   serum[i] %></option>
                         <%  } %>
                 </select><br>
 
                 <span>Select your Moisturizer</span>
-                <select name="moisturizer">
-                        <%      for (let i = 0; i < moisturizer.length; i++) { %>
-                        <option value=<%=  moisturizer[i] %></option>><%=   moisturizer[i] %></option>
-                        <%  } %>
-                </select><br>
-
-                <span>Select your SPF</span>
-                <select name="spf">
-                        <%      for (let i = 0; i < spf.length; i++) { %>
-                        <option value=<%= spf[i] %>><%=   spf[i] %></option>
-                        <%  } %>
-                </select><br>
-                <span>Night Routine</span> <br>
-                <span>Select your Face Wash</span>
-                <select name="faceWashNight">
-                        <%      for (let i = 0; i < faceWash.length; i++) { %>
-                        <option value=<%= faceWash[i] %>><%=   faceWash[i] %></option>
-                        <%  } %>
-                </select><br>
-
-                <span>Select your Toner</span>
-                <select name="tonerNight">
-                        <%      for (let i = 0; i < toner.length; i++) { %>
-                        <option value=<%= toner[i] %>><%=   toner[i] %></option>
-                        <%  } %>
-                </select><br>
-
-                <span>Select your Serum</span>
-                <select name="serumNight">
-                        <%      for (let i = 0; i < serum.length; i++) { %>
-                        <option value=<%=  serum[i] %>><%=   serum[i] %></option>
-                        <%  } %>
-                </select><br>
-
-                <span>Select your zz Moisturizer</span>
-                <select name="moisturizerNight">
+                <select name="moisturizer" class="form-control">
                         <%      for (let i = 0; i < moisturizer.length; i++) { %>
                         <option value=<%=  moisturizer[i] %>><%=   moisturizer[i] %></option>
                         <%  } %>
                 </select><br>
 
-                <button type="submit">Submit</button>
+                <span>Select your SPF</span>
+                <select name="spf" class="form-control">
+                        <%      for (let i = 0; i < spf.length; i++) { %>
+                        <option value=<%= spf[i] %>><%=   spf[i] %></option>
+                        <%  } %>
+                </select><br>
+                <p class="text-secondary">Night Routine</p> <br>
+                <span>Select your Face Wash</span>
+                <select name="faceWashNight" class="form-control">
+                        <%      for (let i = 0; i < faceWashNight.length; i++) { %>
+                        <option value=<%= faceWashNight[i] %>><%=   faceWashNight[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Toner</span>
+                <select name="tonerNight" class="form-control">
+                        <%      for (let i = 0; i < tonerNight.length; i++) { %>
+                        <option value=<%= tonerNight[i] %>><%=   tonerNight[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Serum</span>
+                <select name="serumNight" class="form-control">
+                        <%      for (let i = 0; i < serum.length; i++) { %>
+                        <option value=<%= serumNight[i] %>><%= serumNight[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <span>Select your Moisturizer</span>
+                <select name="moisturizerNight" class="form-control">
+                        <%      for (let i = 0; i < moisturizer.length; i++) { %>
+                        <option value=<%=  moisturizerNight[i] %>><%=   moisturizerNight[i] %></option>
+                        <%  } %>
+                </select><br>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
  
         </form>
 
