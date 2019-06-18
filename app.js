@@ -27,7 +27,7 @@ let moisturizer = [
         "None", "Glow Recipe Watermelon Pink Juice Moisturizer", "Ole Henriksen C-Rush Brightening Gel Crème", "Sunday Riley Tidal Brightening Enzyme Water Cream", "Simple Hydrating Gel Cream", "L'Occitane Aqua Réotier Ultra Thirst-Quenching Gel", "Belif Pore Cleaner Moisturizer", "Too Cool For School Egg Mellow Cream", "Boscia Cactus Water Moisturizer", "Saturday Skin Waterfall Glacier Water Cream", "Sisley Paris Black Rose Skin Infusion Cream", "Tatcha The Water Cream Moisturizer", "Shiseido Pureness Matifying Moisturizer", "Neutrogena Oil-Free Moisture", "Laura Mercier Tinted Moisturizer SPF 20", "Drunk Elephant B-Hydra Intensive Hydration Gel", "Cosrx Natural BHA Skin Returning Emulsion", "Belif True Cream Aqua Bomb", "CeraVe Facial Moisturizing Lotion", "Origins GinZing Energy-Boosting Moisturizer"
 ];
 
-let spf = [
+let sunProtection = [
         "None", "Neutrogena Hydro Boost Gel Lotion Sunscreen SPF 30", "Avene High Protection Tinted Compact SPF 50", "La Roche-Posay Anthelios AOX Daily Antioxidant Serum with Sunscreen SPF 50", "Cetaphil PRO Oil Absorbing Moisturizer SPF 30", "EltaMD UV Clear Broad Spectrum SPF 46", "Clinique Super City Block Oil-Free Daily Face Protector 40 SPF", "Colorescience Sunforgettable Brush-on Sunscreen SPF 50"
 ];
 
@@ -50,16 +50,16 @@ let moisturizerNight = [
 let userSchema = new mongoose.Schema({
         fullName: String,
         email: String,
-        userName: String,
+        username: String,
         faceWash: String,
         toner: String,
         serum: String,
         moisturizer: String,
-        spf: String,
+        sunProtection: String,
         faceWashNight: String,
         tonerNight: String,
         serumNight: String,
-        moisturizerNight: String,
+        moisturizerNight: String
 });
 
 let user = mongoose.model('user', userSchema);
@@ -93,11 +93,11 @@ app.get('/newMember', (req, res) => {
                 toner: toner,
                 serum: serum,
                 moisturizer: moisturizer,
-                spf: spf,
+                sunProtection: sunProtection,
                 faceWashNight: faceWashNight,
                 tonerNight: tonerNight,
                 serumNight: serumNight,
-                moisturizerNight: moisturizerNight,
+                moisturizerNight: moisturizerNight
         });
 });
 
@@ -119,7 +119,7 @@ app.post('/newMember', function (req, res) {
                 toner: req.body.toner,
                 serum: req.body.serum,
                 moisturizer: req.body.moisturizer,
-                spf: spf,
+                sunProtection: req.body.sunProtection,
                 faceWashNight: req.body.faceWashNight,
                 tonerNight: req.body.tonerNight,
                 serumNight: req.body.serumNight,
@@ -141,7 +141,13 @@ app.get('/day_routine', (req, res) => {
 
 
 app.get('/night_routine', (req, res) => {
-        res.render('night.ejs')
+        user.find({}, (err, allUsers) => {
+                if (err) {
+                        console.log('THERE WAS AN ERROR: ' + err);
+                } else {
+                        res.render('night', { users: allUsers });
+                }
+        });
 });
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

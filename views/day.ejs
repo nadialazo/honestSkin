@@ -3,35 +3,42 @@
 <div class="container">
 
         <div>
-                <h1>Day Routines</h1>
+                <h1>Day Routine</h1>
         </div>
 
         <p>
-                See what other users's routine to maintain a healthy complexion. Share with our community what works for
-                you.
+                See what works for other members to start their day and maintain a healthy complexion. Share with our community what works for you.
         </p>
         <div>
                  <div>     
                                        
-                <table>
+                <table class="table table-hover">
                         <tr>
-                                <th>User</th>
-                                <th>Face Wash</th>
-                                <th>Toner</th>
-                                <th>Serum</th>
-                                <th>Moisturizer</th>
-                                <th>SPF</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Face Wash</th>
+                                <th scope="col">Toner</th>
+                                <th scope="col">Serum</th>
+                                <th scope="col">Moisturizer</th>
+                                <th scope="col">SPF</th>
+                               
                         </tr>
-                        <% for(let i=0; i < users.length; i++){ %>
 
-                        <td><%= users[i].username %></td>
-                        <td><%= users[i].faceWash %></td>
-                        <td><%= users[i].toner %></td>
-                        <td><%= users[i].serum %></td>
-                        <td><%= users[i].moisturizer %></td>
-                        <td><%= users[i].spf %></td>
-                </table>
+                        <% for(let i=0; i < users.length; i++){ %>
+                        <tr class="table-active">
+                        
+                              
+                        <td ><%= users[i].username %></td>
+                        <td ><%= users[i].faceWash %></td>
+                        <td ><%= users[i].toner %></td>
+                        <td ><%= users[i].serum %></td>
+                        <td ><%= users[i].moisturizer %></td>
+                        <td ><%= users[i].sunProtection %></td>
+                        
+                        
+                </tr>
                 <% } %>
+                </table>
+                
                         </div>
         </div>
 </div>

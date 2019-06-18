@@ -1,14 +1,46 @@
-<%- include('./partials/header.ejs'); %> -->
+<%- include('./partials/header.ejs'); %>
 
 <div class="container">
-<div>
-                <h1>Night Routines</h1>
+
+        <div>
+                <h1>Night Routine</h1>
+        </div>
+
+        <p>
+                See what works for other members to get ready for bed and maintain a healthy complexion. Share with our community what works for you.
+        </p>
+        <div>
+                 <div>     
+                                       
+                <table class="table table-hover">
+                        <tr>
+                                <th scope="col">User</th>
+                                <th scope="col">Face Wash</th>
+                                <th scope="col">Toner</th>
+                                <th scope="col">Serum</th>
+                                <th scope="col">Moisturizer</th>
+                               
+                               
+                        </tr>
+
+                        <% for(let i=0; i < users.length; i++){ %>
+                        <tr class="table-active">
+                        
+                              
+                        <td ><%= users[i].username %> </td>
+                        <td ><%= users[i].faceWashNight %></td>
+                        <td ><%= users[i].tonerNight %></td>
+                        <td ><%= users[i].serumNight %></td>
+                        <td ><%= users[i].moisturizerNight %></td>
+                       
+                        
+                </tr>
+                <% } %>
+                </table>
+                
+                        </div>
+        </div>
 </div>
 
-<p>
-        See what other users's routine to maintain a healthy complexion. Share with our community what works for you.
-</p>
-
-</div>
 
 <%- include('./partials/footer.ejs'); %>
